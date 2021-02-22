@@ -1,0 +1,57 @@
+.container {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  .headerLinks {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .linkItem {
+      font-size: 12px;
+      color: #535353;
+      text-transform: uppercase;
+    }
+
+    img {
+      margin: 0 10px;
+    }
+  }
+
+  .mainContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 3em;
+
+    .leftItem {
+    }
+    .rightItem {
+      .infoText {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #5b5b5b;
+      }
+      .addressInfo {
+        font-size: 13px;
+      }
+      .link {
+        font-size: 12px;
+        color: #00a3ff;
+      }
+      .prize {
+        font-size: 30px;
+        font-weight: 300;
+      }
+      .breakdown {
+        margin-top: 30px;
+        .title {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #5b5b5b;
+          border-bottom: 1px solid darken(white, 10%);
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

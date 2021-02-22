@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+$logoFont: "Sarpanch", sans-serif;
+
+.logo {
+  font-family: $logoFont;
+  font-size: 24px;
+  color: #520776;
+  cursor: pointer;
+}
+
+.input-field {
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: flex;
+
+  input,
+  select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    font-size: 12px;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  font-size: 12px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+}
+
+button {
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: #00a3ff;
+  font-size: 12px;
+  font-weight: 500;
+  position: relative;
+
+  &.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 3px solid transparent;
+      border-left-color: white;
+      border-radius: 50%;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: rotate 0.5s infinite linear;
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: translateY(-50%) rotateZ(360deg);
+  }
+}
+
+a {
+  color: #00a3ff;
+  cursor: pointer;
+}
+
+#notifierID {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 50;
+
+  .notifierContainer {
+    background-color: gray;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+
+    &.error {
+      background-color: rgb(240, 71, 71);
+    }
+    &.success {
+      background-color: rgb(14, 170, 110);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  background-color: rgba(black, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner {
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(black, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      cursor: pointer;
+    }
+  }
+}
