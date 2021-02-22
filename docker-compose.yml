@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  frontend:
+    build: .
+    command: npm start
+    container_name: ecommerce_frontend
+    restart: always
+    volumes:
+      - .:/ecommerce_frontend
+    ports:
+      - "8443:3000"
+    networks:
+      - ecommerce_net
+
+networks:
+  ecommerce_net:
+    driver: bridge
